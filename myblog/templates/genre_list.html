@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>All {{genre}} Posts</h1>
+{% for result in results %}
+    <div class="post">
+        <h2>
+            <a href="{% url 'post_detail' result.pk %}">{{ result }}</a>
+        </h2>
+        <p class="byline">
+      	Posted by {{ result.author }} &mdash; {{ result.published_date }}
+    	</p>
+    </div>
+{% endfor %}
+{% endblock %}
